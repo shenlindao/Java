@@ -15,7 +15,7 @@ import java.util.logging.SimpleFormatter;
 public class Ex_05 {
     public static void main(String[] args) throws SecurityException, IOException {
         String pathProject = System.getProperty("user.dir");
-        String pathFile = pathProject.concat("\\Seminar_02-2.txt");
+        String pathFile = pathProject.concat("Seminar_02-2.txt");
         addListToFile(pathFile, showCurrentFiles(pathProject));
     }
 
@@ -26,7 +26,7 @@ public class Ex_05 {
 
     static void addListToFile(String filePath, String[] list) throws SecurityException, IOException { //сформировать файл
         Logger logger = Logger.getLogger(Ex_05.class.getName()); //подключаем логгер
-        FileHandler fh = new FileHandler("\\Seminar_02-2_log.txt"); // подключаем FileHandler для записи в файл
+        FileHandler fh = new FileHandler("Seminar_02-2_log.txt"); // подключаем FileHandler для записи в файл
 
         logger.addHandler(fh);
 

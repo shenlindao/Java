@@ -7,15 +7,14 @@ import java.util.Scanner;
 public class Ex_03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int firstNumber = getNumber("Input your first number: ");
-        int secondNumber = getNumber("Input your second number: ");
+        int firstNumber = getNumber("Input your first number: ", scanner);
+        int secondNumber = getNumber("Input your second number: ", scanner);
         drawCalc();
-        resultOfChoice(firstNumber, secondNumber);
+        resultOfChoice(firstNumber, secondNumber, scanner);
         scanner.close();
     }
 
-    static int getNumber(String text) {
-        Scanner scanner = new Scanner(System.in);
+    static int getNumber(String text, Scanner scanner) {
         System.out.println(text);
         int num = scanner.nextInt();
         return num;
@@ -52,8 +51,7 @@ public class Ex_03 {
         System.out.println("4 - Division");
     }
 
-    static void resultOfChoice(int firstNumber, int secondNumber) {
-        Scanner scanner = new Scanner(System.in);
+    static void resultOfChoice(int firstNumber, int secondNumber, Scanner scanner) {
         System.out.println("\nSelect the operation number: ");
         int user_choice = scanner.nextInt();
         switch (user_choice) {
