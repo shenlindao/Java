@@ -1,6 +1,7 @@
-package Homework.Homework_01;
 // Задание
 // 3) Реализовать простой калькулятор
+
+package Homework.Homework_01;
 
 import java.util.Scanner;
 

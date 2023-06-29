@@ -1,6 +1,7 @@
-package Homework.Homework_01;
 // Задание
 // 2) Вывести все простые числа от 1 до 1000
+
+package Homework.Homework_01;
 
 import java.util.Scanner;
 
