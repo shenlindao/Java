@@ -2,7 +2,7 @@
 // Заполнить список названиями планет Солнечной системы в произвольном порядке с повторениями. 
 // Вывести название каждой планеты и количество его повторений в списке
 
-package Seminar.Seminar_04;
+package Seminar.Seminar_03;
 
 import java.io.IOException;
 import java.util.ArrayList;
