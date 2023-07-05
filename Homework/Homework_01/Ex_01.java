@@ -10,10 +10,10 @@ import java.util.Scanner;
 
 public class Ex_01 {
     public static void main(String[] args) {
-        getNumber();
+        GetNumber();
     }
 
-    static void getNumber() {
+    static void GetNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input your number: ");
         int num = scanner.nextInt();

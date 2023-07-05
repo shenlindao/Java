@@ -15,12 +15,12 @@ public class Ex_02 {
         String projectPath = System.getProperty("user.dir");
         String filePath = projectPath.concat("\\Homework\\Homework_02\\Homework_02.txt");
         int[] arr = { 32, 12, 2, 66, 81, 10, 7, 4 };
-        int[] sortArr = bubbleSort(arr);
-        printArray(sortArr);
+        int[] sortArr = BubbleSort(arr);
+        PrintArray(sortArr);
         loggingResult(filePath, sortArr);
     }
 
-    public static int[] bubbleSort(int[] arr) {
+    public static int[] BubbleSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -33,7 +33,7 @@ public class Ex_02 {
         return arr;
     }
 
-    public static void printArray(int[] arr) {
+    public static void PrintArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + "\t");
         }

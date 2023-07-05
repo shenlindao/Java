@@ -13,18 +13,18 @@ public class Ex_01 {
     public static void main(String[] args) {
         String projectPath = System.getProperty("user.dir");
         String filesPath = projectPath.concat("\\Homework\\Homework_02");
-        String[] files = getFiles(filesPath);
+        String[] files = GetFiles(filesPath);
         for (String file : files) {
-            System.out.println(file + " - Расширение: " + getExtention(file));
+            System.out.println(file + " - Расширение: " + GetExtention(file));
         }
     }
 
-    static String[] getFiles(String projectPath) {
+    static String[] GetFiles(String projectPath) {
         File currentDir = new File(projectPath);
         return currentDir.list();
     }
 
-    public static String getExtention(String file) {
+    public static String GetExtention(String file) {
         int index = file.lastIndexOf(".");
         if (index == -1) {
             return "";

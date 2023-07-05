@@ -7,20 +7,20 @@ import java.util.Scanner;
 
 public class Ex_02 {
     public static void main(String[] args) {
-        primeNumbers();
+        PrimeNumbers();
     }
 
-    static void primeNumbers() {
+    static void PrimeNumbers() {
         Scanner scanner = new Scanner(System.in);
         for (int i = 1; i < 1000; i++) {
-            if (isNumberPrime(i)) {
+            if (IsNumberPrime(i)) {
                 System.out.print(i + " ");
             }
         }
         scanner.close();
     }
 
-    public static boolean isNumberPrime(int number) {
+    public static boolean IsNumberPrime(int number) {
         if (number == 2)
             return true;
         for (int i = 2; i < number; i++) {
