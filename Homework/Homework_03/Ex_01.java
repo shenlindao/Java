@@ -22,6 +22,7 @@ public class Ex_01 {
         printArray(arr);
         findMinNumber(arr);
         findMaxNumber(arr);
+        fidMidNumber(arr);
     }
 
     public static ArrayList<Integer> fillRandom(int n) {
@@ -65,7 +66,12 @@ public class Ex_01 {
     }
 
     public static void fidMidNumber(ArrayList<Integer> list) {
-        
+        int sum = 0;
+        for (int i = 0; i < list.size(); i++) {
+            sum += list.get(i);
+        }
+        int average = sum / list.size();
+        System.out.println("Среднее арифметическое значение чисел в отфильтрованном списке: " + average + "\n");
     }
 
     public static void printArray(ArrayList<Integer> list) {
