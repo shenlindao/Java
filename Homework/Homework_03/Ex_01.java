@@ -15,16 +15,16 @@ public class Ex_01 {
     public static void main(String[] args) throws IOException, InterruptedException{
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         ArrayList<Integer> arr = new ArrayList<>();
-        arr = FillRandom(10);
+        arr = fillRandom(10);
         System.out.println("Получен новый рандомный список: " + "\n");
-        PrintArray(arr);
-        DeleteEvenNumbers(arr);
-        PrintArray(arr);
-        FindMinNumber(arr);
-        FindMaxNumber(arr);
+        printArray(arr);
+        deleteEvenNumbers(arr);
+        printArray(arr);
+        findMinNumber(arr);
+        findMaxNumber(arr);
     }
 
-    public static ArrayList<Integer> FillRandom(int n) {
+    public static ArrayList<Integer> fillRandom(int n) {
         ArrayList<Integer> list = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < n; i++) {
@@ -33,7 +33,7 @@ public class Ex_01 {
         return list;
     }
 
-    public static void DeleteEvenNumbers(ArrayList<Integer> list) {
+    public static void deleteEvenNumbers(ArrayList<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) % 2 == 0) {
                 list.remove(i);
@@ -42,7 +42,7 @@ public class Ex_01 {
         System.out.println("Список отфильтрован, чётные числа удалены: " + "\n");
     }
 
-    public static void FindMinNumber(ArrayList<Integer> list) {
+    public static void findMinNumber(ArrayList<Integer> list) {
         int min = list.get(0);
         for (int i = 1; i < list.size(); i++) {
             int num = list.get(i);
@@ -53,7 +53,7 @@ public class Ex_01 {
         System.out.println("Минимальное значение в отфильтрованном списке: " + min + "\n");
     }
 
-    public static void FindMaxNumber(ArrayList<Integer> list) {
+    public static void findMaxNumber(ArrayList<Integer> list) {
         int max = list.get(0);
         for (int i = 1; i < list.size(); i++) {
             int num = list.get(i);
@@ -64,11 +64,11 @@ public class Ex_01 {
         System.out.println("Максимальное значение в отфильтрованном списке: " + max + "\n");
     }
 
-    public static void FidMidNumber(ArrayList<Integer> list) {
+    public static void fidMidNumber(ArrayList<Integer> list) {
         
     }
 
-    public static void PrintArray(ArrayList<Integer> list) {
+    public static void printArray(ArrayList<Integer> list) {
         for (Integer el : list) {
             System.out.print(el + "\t");
         }

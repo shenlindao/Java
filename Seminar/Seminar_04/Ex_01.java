@@ -13,14 +13,14 @@ import java.util.Scanner;
 public class Ex_01 {
     public static void main(String[] args) throws IOException, InterruptedException {
         new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        int number = GetNumber("Input the list size: ");
-        ArrayList<Integer> list = ListRandom(number);
-        PrintList(list);
+        int number = getNumber("Input the list size: ");
+        ArrayList<Integer> list = listRandom(number);
+        printList(list);
         Collections.sort(list);
-        PrintList(list);
+        printList(list);
     }
 
-    public static int GetNumber(String text) {
+    public static int getNumber(String text) {
         System.out.println(text);
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
@@ -28,7 +28,7 @@ public class Ex_01 {
         return num;
     }
 
-    public static ArrayList<Integer> ListRandom(int n) {
+    public static ArrayList<Integer> listRandom(int n) {
         ArrayList<Integer> list = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < n; i++) {
@@ -37,7 +37,7 @@ public class Ex_01 {
         return list;
     }
 
-    static void PrintList(ArrayList<Integer> list) {
+    static void printList(ArrayList<Integer> list) {
         System.out.print("\n");
         for (Integer i : list) {
             System.out.print(i + "\t");
