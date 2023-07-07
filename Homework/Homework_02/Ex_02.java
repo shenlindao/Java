@@ -15,12 +15,17 @@ public class Ex_02 {
         String projectPath = System.getProperty("user.dir");
         String filePath = projectPath.concat("\\Homework\\Homework_02\\Homework_02.txt");
         int[] arr = { 32, 12, 2, 66, 81, 10, 7, 4 };
-        int[] sortArr = BubbleSort(arr);
-        PrintArray(sortArr);
-        loggingResult(filePath, sortArr);
+        BubbleSort(filePath, arr);
     }
 
-    public static int[] BubbleSort(int[] arr) {
+    public static int[] BubbleSort(String filePath, int[] arr) throws SecurityException, IOException {
+        Logger logger = Logger.getLogger(Ex_02.class.getName());
+        FileHandler fh = new FileHandler("Homework\\Homework_02\\Homework_02_log.txt");
+
+        logger.addHandler(fh);
+
+        SimpleFormatter simple = new SimpleFormatter();
+        fh.setFormatter(simple);
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -29,6 +34,7 @@ public class Ex_02 {
                     arr[j + 1] = temp;
                 }
             }
+            loggingResult(filePath, arr);
         }
         return arr;
     }
@@ -41,13 +47,6 @@ public class Ex_02 {
 
     static void loggingResult(String filePath, int[] arr) throws SecurityException, IOException {
         Logger logger = Logger.getLogger(Ex_02.class.getName());
-        FileHandler fh = new FileHandler("Homework\\Homework_02\\Homework_02_log.txt");
-
-        logger.addHandler(fh);
-
-        SimpleFormatter simple = new SimpleFormatter();
-        fh.setFormatter(simple);
-
         try {
             File myFile = new File(filePath);
             FileWriter writer = new FileWriter(myFile);
