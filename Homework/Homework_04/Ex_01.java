@@ -19,12 +19,9 @@ public class Ex_01 {
         int number2 = getInteger(deque2);
         int sum = sumInt(number1, number2);
         int mult = multInt(number1, number2);
-        System.out.println(mult);
         Deque<Integer> multDeque = dequeCreate(mult);
         Deque<Integer> sumDeque = dequeCreate(sum);
-        System.out.println();
         System.out.println(multDeque);
-        System.out.println();
         System.out.println(sumDeque);
     }
 
