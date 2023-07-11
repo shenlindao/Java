@@ -65,7 +65,7 @@ public class Ex_01 {
         while (num != 0) {
             int n = num % 10;
             String s = Integer.toString(num);
-            if (s.length() > 2 && s.substring(0, 1) == "-") {
+            if (s.length() > 2 && s.charAt(0) == '-') {
                 n *= -1;
             }
             resultDeque.push(n);
