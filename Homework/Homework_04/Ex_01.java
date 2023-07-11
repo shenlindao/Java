@@ -5,35 +5,69 @@
 
 package Homework.Homework_04;
 
+import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 
 public class Ex_01 {
-    public static void main(String[] args) {
-        Deque<Integer> num1 = new ArrayDeque<>(Arrays.asList(2, 4, 3));
-        Deque<Integer> num2 = new ArrayDeque<>(Arrays.asList(5, 6, -4));
-        Deque<Integer> sum = sumOFDeque(num1, num2);
-        System.out.println(sum);
+    public static void main(String[] args) throws IOException, InterruptedException {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        Deque<Integer> deque1 = new ArrayDeque<>(Arrays.asList(2, 4, 3));
+        Deque<Integer> deque2 = new ArrayDeque<>(Arrays.asList(5, 6, -1));
+        int number1 = getInteger(deque1);
+        int number2 = getInteger(deque2);
+        int sum = sumInt(number1, number2);
+        int mult = multInt(number1, number2);
+        System.out.println(mult);
+        Deque<Integer> multDeque = dequeCreate(mult);
+        Deque<Integer> sumDeque = dequeCreate(sum);
+        System.out.println();
+        System.out.println(multDeque);
+        System.out.println();
+        System.out.println(sumDeque);
     }
 
-    static Deque<Integer> sumOFDeque(Deque<Integer> num1, Deque<Integer> num2) {
-        Deque<Integer> result = new ArrayDeque<>();
-        int carry = 0;
-        while (!num1.isEmpty() || !num2.isEmpty()) {
-            int sum = carry;
-            if (!num1.isEmpty()) {
-                sum += num1.pollFirst();
+    static int getInteger(Deque<Integer> deque) {
+        int number = 0;
+        boolean posNeg = false;
+        while (!deque.isEmpty()) {
+            int n = number;
+            if (!deque.isEmpty()) {
+                int temp = 0;
+                temp = deque.pollLast();
+                if (temp < 0) {
+                    temp *= -1;
+                    posNeg = true;
+                }
+                n += temp;
             }
-            if (!num2.isEmpty()) {
-                sum += num2.pollFirst();
-            }
-            result.addLast(sum % 10);
-            carry = sum / 10;
+            number = n * 10;
         }
-        if (carry != 0) {
-            result.addLast(carry);
-        }
-        return result;
+        number = number / 10;
+        if (posNeg)
+            number *= -1;
+        return number;
     }
+
+    static int sumInt(int number1, int number2) {
+        int sum = number1 + number2;
+        return sum;
+    }
+
+    static int multInt(int number1, int number2) {
+        int mult = number1 * number2;
+        return mult;
+    }
+
+    static Deque<Integer> dequeCreate(int num) {
+        Deque<Integer> resultDeque = new ArrayDeque<>();
+        while (num != 0) {
+            resultDeque.push(num % 10);
+            num = num / 10;
+        }
+
+        return resultDeque;
+    }
+
 }
