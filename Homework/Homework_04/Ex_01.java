@@ -63,11 +63,15 @@ public class Ex_01 {
     static Deque<Integer> dequeCreate(int num) {
         Deque<Integer> resultDeque = new ArrayDeque<>();
         while (num != 0) {
-            resultDeque.push(num % 10);
+            int n = num % 10;
+            String s = Integer.toString(num);
+            if (s.length() > 2 && s.substring(0, 1) == "-") {
+                n *= -1;
+            }
+            resultDeque.push(n);
             num = num / 10;
         }
 
         return resultDeque;
     }
-
 }
